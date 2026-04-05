@@ -26,7 +26,10 @@ def calc(value1, value2, operation="multiply"):
     except ZeroDivisionError:
         return "You can't divide by 0!"
     except TypeError:
-        return "You can't multiply those values!"
+        if operation == "multiply":
+            return "You can't multiply those values!"
+        else:
+            return f"You can't {operation} those values!"
 
 # Calculator function with match-case
 # def calc(value1, value2, operation="multiply"):
@@ -108,9 +111,9 @@ def student_scores(option, **kwargs):
         return total / count
 
 # Task 8: Titleize
-def titleize(str):
+def titleize(title):
     little_words = ["a", "on", "an", "the", "of", "and", "is", "in"]
-    words = str.split()
+    words = title.split()
     result_words = []
     
     for i, word in enumerate(words):
