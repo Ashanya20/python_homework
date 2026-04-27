@@ -1,0 +1,15 @@
+function: say_hello
+positional parameters: none
+keyword parameters: none
+return: None
+
+function: take_args
+positional parameters: [1, 2, 3, 'test']
+keyword parameters: none
+return: True
+
+function: take_kwargs
+positional parameters: none
+keyword parameters: {'a': 10, 'b': 20}
+return: <function logger_decorator at 0x1006471c0>
+
