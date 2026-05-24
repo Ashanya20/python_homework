@@ -1,0 +1,10 @@
+Task 5: Ethical Web Scraping
+
+1. Which sections of the website are restricted for crawling?
+   Wikipedia blocks crawlers from accessing internal stuff like /w/, /wiki/Special:, /wiki/Wikipedia:, /api/, and /static/. Regular article pages (like /wiki/Article_Name) are usually allowed.
+
+2. Are there specific rules for certain user agents?
+   Yeah, different bots get different treatment. Googlebot, Bingbot, DuckDuckBot, etc., have their own rules – some have longer delays or extra disallowed paths. The "*" rule covers everyone else.
+
+3. Why do websites use robots.txt and how does it promote ethical scraping?
+   Websites use robots.txt to tell crawlers what parts to stay away from. It helps avoid overloading the server, keeps private or admin areas safe, and saves bandwidth. Following those rules is just being a good citizen – it means you're not hammering the site or ignoring its wishes.
