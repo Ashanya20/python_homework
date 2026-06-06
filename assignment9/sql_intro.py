@@ -6,7 +6,6 @@ os.makedirs(os.path.dirname(db_path), exist_ok=True)
 
 def create_tables(conn):
     cursor = conn.cursor()
-    cursor.execute("PRAGMA foreign_keys = 1")
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS publishers (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -90,6 +89,7 @@ def main():
     try:
         conn = sqlite3.connect(db_path)
         print("Connected to database.")
+        conn.execute("PRAGMA foreign_keys = 1")
         create_tables(conn)
         
         # Insert sample data

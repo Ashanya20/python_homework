@@ -4,6 +4,7 @@ import pandas as pd
 
 db_path = "../db/lesson.db"
 
+conn = None
 try:
     conn = sqlite3.connect(db_path)
     print("Connected to lesson.db")
