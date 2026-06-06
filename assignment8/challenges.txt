@@ -1,0 +1,3 @@
+Challenges:
+- The OWASP page initially didn't show the list. I had to navigate from the main page to the 2025 Top Ten list.
+- I used the index XPath to grab each item.
