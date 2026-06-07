@@ -38,12 +38,12 @@ def task2():
             SELECT c.customer_name, AVG(sub.total_price) AS average_total_price
             FROM customers c
             LEFT JOIN (
-                SELECT o.customer_id, SUM(li.quantity * p.price) AS total_price
+                SELECT o.customer_id AS customer_id_b, SUM(li.quantity * p.price) AS total_price
                 FROM orders o
                 JOIN line_items li ON o.order_id = li.order_id
                 JOIN products p ON li.product_id = p.product_id
                 GROUP BY o.order_id
-            ) sub ON c.customer_id = sub.customer_id
+            ) sub ON c.customer_id = sub.customer_id_b
             GROUP BY c.customer_id
             ORDER BY c.customer_name
         """
@@ -65,6 +65,7 @@ def task3():
     conn = None
     try:
         conn = sqlite3.connect(db_path)
+        conn.execute("PRAGMA foreign_keys = 1")
         cursor = conn.cursor()
         
         # Get customer_id for "Perez and Sons"
